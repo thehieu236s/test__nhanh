@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset/reset.css" />
+    <link rel="stylesheet" href="./Test.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="btn">
+      <button class="btnn btn__1 js__btns">sucess</button>
+      <button class="btnn btn__2 js__btns">infomation</button>
+      <button class="btnn btn__3 js__btns">buy now</button>
+      <button class="btnn btn__4 js__btns">warning</button>
+      <button class="btnn btn__5 js__btns">contact</button>
+      <button class="btnn btn__6 js__btns">delete</button>
+    </div>
+
+    <div class="bar">
+      <div class="bar__music"></div>
+      <div class="bar__dot"></div>
+    </div>
+    <div class="before__name">
+      <div class="name">Nguyen Van A</div>
+    </div>
+    <h3 class="line">
+      <span class="line__text">Text</span>
+    </h3>
+    <div class="box__out">
+      <i class="bx bx-color box__in"></i>
+    </div>
+
+    <div class="name__nguyen">
+      <span class="nguyen"> Nguyen Van B </span>
+    </div>
+
+    <div class="line__2">
+      <div class="text__2">Text</div>
+    </div>
+
+    <div class="bog__out">
+      <i class="bx bx-color bog__in"></i>
+    </div>
+
+    <div class="effect">effect</div>
+
+    <div class="linex">
+      <div class="line__in"></div>
+      <div class="line__dot"></div>
+    </div>
+    <div class="modal js__modal-show">
+      <div class="modal__container js__modal-container">
+        <div class="modal__close js__modal-close">
+          <i class="close__icon bx bxs-x-square"></i>
+        </div>
+        <div class="container__header">
+          <i class="bx bx-ghost Testnhanh__icon"></i>
+          <h1 class="Test__nhanh">Tesan</h1>
+        </div>
+
+        <div class="container__body">
+          <label for="yn" class="label__test">Tên đăng nhập</label>
+          <input
+            type="text"
+            id="yn"
+            class="input"
+            placeholder="Enter your name"
+          />
+          <label for="pw" class="label__test">Mật khẩu</label>
+          <div class="input__password">
+            <input
+              type="password"
+              id="pw"
+              class="input js__input-password"
+              placeholder="Password"
+            />
+            <i class="eye bx bx-show js__show-password"></i>
+            <i class="eye bx bx-hide js__hide-password"></i>
+          </div>
+          <button class="test__btn">Đăng nhập</button>
+        </div>
+
+        <div class="test__footer">
+          <div class="source">
+            <i class="bx bxl-unity"></i>
+            <i class="bx bxl-visual-studio"></i>
+            <i class="bx bxl-discord-alt"></i>
+          </div>
+
+          <span class="footer__test">Need <a href="">help?</a></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // password__hide-show
+      const inputPassword = document.querySelector(".js__input-password");
+      const showPassword = document.querySelector(".js__show-password");
+      const hidePassword = document.querySelector(".js__hide-password");
+      hidePassword.addEventListener("click", function () {
+        hidePassword.classList.add("hidden");
+        inputPassword.setAttribute("type", "text");
+      });
+      showPassword.addEventListener("click", function () {
+        hidePassword.classList.remove("hidden");
+        inputPassword.setAttribute("type", "password");
+      });
+      // password__hide-show
+
+      const jsBtns = document.querySelectorAll(".js__btns");
+      const modalShow = document.querySelector(".js__modal-show");
+      const modalContainer = document.querySelector(".js__modal-container");
+      const modalClose = document.querySelector(".js__modal-close");
+
+      modalShow.addEventListener("click", function () {
+        modalShow.classList.add("hide");
+      });
+      modalContainer.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+      modalClose.addEventListener('click',function(){
+        modalShow.classList.add("hide");
+        
+      })
+
+      for (const jsBtn of jsBtns) {
+        jsBtn.addEventListener("click", function () {
+          modalShow.classList.remove("hide");
+        });
+      }
+    </script>
+  </body>
+</html>
